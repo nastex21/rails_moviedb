@@ -10,7 +10,8 @@ gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'devise_token_auth'
-gem 'omniauth'
+gem 'omniauth', '~> 2.0', '>= 2.0.2'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'dotenv-rails', groups: [:development, :test]
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
