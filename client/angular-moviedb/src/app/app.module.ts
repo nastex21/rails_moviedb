@@ -6,10 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularTokenModule } from 'angular-token';
 import {environment} from '../environments/environment';
+import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
