@@ -1,4 +1,4 @@
-
+<!--Navigation-->
 <div class="navbar-fixed">
 
     <nav  role="navigation">
@@ -8,11 +8,19 @@
   
         <ul class="right hide-on-med-and-down">
   
-          <li> <a (click)="presentAuthDialog()" >LOGIN</a></li>
-          <li> <a (click)="presentAuthDialog('register')">REGISTER</a></li>
+          <li *ngIf="!tokenAuthService.userSignedIn()"> 
+            <a (click)="presentAuthDialog()" >LOGIN</a>
+          </li>
+          <li *ngIf="!tokenAuthService.userSignedIn()"> 
+            <a (click)="presentAuthDialog('register')">REGISTER</a>
+          </li>
   
-          <li> <a [routerLink]="['/profile']">PROFILE</a></li>
-          <li> <a >LOGOUT</a></li>
+          <li *ngIf="tokenAuthService.userSignedIn()">
+            <a >PROFILE</a>
+          </li>
+          <li *ngIf="tokenAuthService.userSignedIn()">
+            <a (click)="tokenAuthService.signOut()">LOGOUT</a>
+          </li>
   
         </ul>
   
@@ -22,4 +30,4 @@
   
   </div>
   
-  <lets-react-auth-dialog #authDialog></lets-react-auth-dialog>
+  <lets-react-auth-dialog #authDialog ></lets-react-auth-dialog>
