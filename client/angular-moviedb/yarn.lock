@@ -1572,6 +1572,13 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+angular-token@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/angular-token/-/angular-token-7.0.1.tgz#6072783a792964f7be454916e168ee60ed93aae4"
+  integrity sha512-CqmqOXc7xzSsguYxUen3+Kjiz9Kh0ndFTL0utQum1EamgHrnWTL9BwGazo9LK9jDoTbIjqXJOfNdSybNB/GefQ==
+  dependencies:
+    tslib "^1.9.0"
+
 angular2-materialize@^15.1.10:
   version "15.1.10"
   resolved "https://registry.yarnpkg.com/angular2-materialize/-/angular2-materialize-15.1.10.tgz#775ecb4a0b39b5789e3a400e60c67bc48c8534df"
