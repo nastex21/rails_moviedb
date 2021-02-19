@@ -4,6 +4,8 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularTokenModule } from 'angular-token';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterializeModule
+    MaterializeModule,
+    AngularTokenModule.forRoot({
+      apiBase: environment.token_auth_config.apiBase
+    })
   ],
-  providers: [],
+  providers: [ AngularTokenModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
