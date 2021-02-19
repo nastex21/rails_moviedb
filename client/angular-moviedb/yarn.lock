@@ -1577,13 +1577,6 @@ angular2-materialize@^15.1.10:
   resolved "https://registry.yarnpkg.com/angular2-materialize/-/angular2-materialize-15.1.10.tgz#775ecb4a0b39b5789e3a400e60c67bc48c8534df"
   integrity sha1-d17LSgs5tXieOkAOYMZ7xIyFNN8=
 
-angular2-token@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/angular2-token/-/angular2-token-0.2.0.tgz#aa6cbf417920000cc37ccbfd1a3cb6ac390092b5"
-  integrity sha512-GUVo6PCllkm1L29t09yULJrIUH3uOCSBTYPcUul3FpuPvKVpSw/9Qh3HIuB6DpmHD0VTtH/Ybviu2XEtqjnPjw==
-  dependencies:
-    tslib "^1.9.0"
-
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
