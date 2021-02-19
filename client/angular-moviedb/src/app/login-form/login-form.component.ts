@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {AngularTokenService} from 'angular-token';
 
 @Component({
   selector: 'lets-react-login-form',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  signInUser = {
+    login: '',
+    password: ''
+  };
 
-  ngOnInit(): void {
+  @Output() onFormResult = new EventEmitter<any>();
+  constructor(private tokenAuthSerivce:AngularTokenService) { }
+
+  ngOnInit() {}
+
+  onSignInSubmit(){
+
+    this.tokenAuthSerivce.signIn(this.signInUser).subscribe(
+
+        res => {
+          if(res.status == 200){
+            this.onFormResult.emit({signedIn: true, res});
+          }
+        },
+
+        err => {
+          console.log('err:', err);
+          this.onFormResult.emit({signedIn: false, err});
+        }
+    )
+
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {AngularTokenService} from 'angular-token';
 
 @Component({
   selector: 'lets-react-register-form',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterFormComponent implements OnInit {
 
-  constructor() { }
+  signUpUser = {
+    login: '',
+    password: '',
+    passwordConfirmation: ''
+  };
 
-  ngOnInit(): void {
+  @Output() onFormResult = new EventEmitter<any>();
+
+  constructor(private tokenAuthSerivce:AngularTokenService) { }
+
+  ngOnInit() {}
+
+
+  onSignUpSubmit(){
+
+    this.tokenAuthSerivce.registerAccount(this.signUpUser).subscribe(
+
+        (res) => {
+
+          if (res.status == 200){
+            this.onFormResult.emit({signedUp: true, res})
+          }
+
+        },
+
+        (err) => {
+          console.log(err.json())
+          this.onFormResult.emit({signedUp: false, err})
+        }
+    )
+
   }
-
 }
